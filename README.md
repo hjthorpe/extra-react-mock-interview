@@ -1,10 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Challenge 1
 
-In the project directory, you can run:
+### Replace the Russian Roulette drill code as follows
 
-### `npm start`
+This component should now track a cat's nine lives.  The cat starts with 9 lives. Relabel the button "Kitty had an accident!"
+
+Each time the button is clicked, you should randomly select a number 1 or 2 (like a coin toss).  If the number is 1, Kitty keeps the same number of lives.  Display the message "Landed on feet! Kitty still has X lives" where X is the current number of lives. If the number is 2, subtract 1 from the number of lives Kitty has and display "Uh oh, used up a life! Kitty has X lives left."  
+
+Don't need to implement this part, but be able to discuss: 
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
