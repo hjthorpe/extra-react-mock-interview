@@ -15,4 +15,6 @@ Don't need to implement this part, but be able to discuss:
 
 ## Challenge 2
 
-### Add Links and Routes to the main App component, linking to each of the drills
+### Add Links and Routes to the main App component
+
+Create links and routes to navigate to each of the drills
