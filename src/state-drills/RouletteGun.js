@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 export default class RouletteGun extends Component {
   static defaultProps = {
-    bulletInChamber: 8
+    bulletInChamber: 2
   };
 
   state = {
     chamber: null,
     spinningTheChamber: false,
+    kittyLives: 9
   };
 
   componentWillUnmount() {
@@ -19,7 +20,7 @@ export default class RouletteGun extends Component {
       spinningTheChamber: true,
     })
     this.timeout = setTimeout(() => {
-      const randomChamber = Math.ceil(Math.random() * 8)
+      const randomChamber = Math.ceil(Math.random() * 2)
 
       this.setState({
         chamber: randomChamber,
@@ -29,14 +30,17 @@ export default class RouletteGun extends Component {
   }
 
   renderDisplay() {
-    const { chamber, spinningTheChamber } = this.state
-    const { bulletInChamber } = this.props
+    const { chamber, spinningTheChamber } = this.state;
+    const { bulletInChamber } = this.props;
     if (spinningTheChamber) {
-      return 'spinning the chamber and pulling the trigger! ...'
-    } else if (chamber === bulletInChamber) {
-      return 'BANG!!!!!'
-    } else {
-      return 'you\'re safe!'
+      return 'spinning the chamber and pulling the trigger! ...';
+    } 
+    else if (chamber === bulletInChamber) {
+       this.setState(){kittyLives: this.state.kittyLives - 1};
+      return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
+    } 
+    else {
+      return `Landed on feet! Kitty still has ${this.state.kittyLives} lives`
     }
   }
 
@@ -45,7 +49,7 @@ export default class RouletteGun extends Component {
       <div className='RouletteGun'>
         <p>{this.renderDisplay()}</p>
         <button onClick={this.handleClick}>
-          Pull the trigger!
+          Kitty had an accident!
         </button>
       </div>
     )
