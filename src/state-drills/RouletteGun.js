@@ -32,7 +32,8 @@ export default class RouletteGun extends Component {
   kittyLostLife = () => {
     this.setState({
       kittyLives: this.state.kittyLives - 1,
-    )}
+    })
+    return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
   }
 
   renderDisplay() {
@@ -42,8 +43,8 @@ export default class RouletteGun extends Component {
       return 'spinning the chamber and pulling the trigger! ...';
     } 
     else if (chamber === bulletInChamber) {
-      <this.kittyLostLife />
-      return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
+      this.kittyLostLife()
+      // return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
     } 
     else {
       return `Landed on feet! Kitty still has ${this.state.kittyLives} lives`
