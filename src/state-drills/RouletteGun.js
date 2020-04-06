@@ -30,9 +30,9 @@ export default class RouletteGun extends Component {
   }
 
   kittyLostLife = () => {
-    this.setState(){
-      kittyLives: this.state.kittyLives - 1
-    }
+    this.setState({
+      kittyLives: this.state.kittyLives - 1,
+    )}
   }
 
   renderDisplay() {
