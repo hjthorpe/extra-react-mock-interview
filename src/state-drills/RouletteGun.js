@@ -43,7 +43,7 @@ export default class RouletteGun extends Component {
       return 'spinning the chamber and pulling the trigger! ...';
     } 
     else if (chamber === bulletInChamber) {
-      this.kittyLostLife()
+      this.kittyLostLife
       // return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
     } 
     else {
