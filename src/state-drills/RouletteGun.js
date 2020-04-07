@@ -26,15 +26,15 @@ export default class RouletteGun extends Component {
         chamber: randomChamber,
         spinningTheChamber: false,
       })
+
+      if (this.state.chamber === this.props.bulletInChamber){
+        this.setState({
+          kittyLives: this.state.kittyLives - 1
+        })
+      }
     }, 2000)
   }
 
-  kittyLostLife = () => {
-    this.setState({
-      kittyLives: this.state.kittyLives - 1,
-    })
-    return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
-  }
 
   renderDisplay() {
     const { chamber, spinningTheChamber } = this.state;
@@ -43,8 +43,8 @@ export default class RouletteGun extends Component {
       return 'spinning the chamber and pulling the trigger! ...';
     } 
     else if (chamber === bulletInChamber) {
-      this.kittyLostLife
-      // return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
+      
+      return `Uh oh, used up a life! Kitty has ${this.state.kittyLives} lives left.`;
     } 
     else {
       return `Landed on feet! Kitty still has ${this.state.kittyLives} lives`
